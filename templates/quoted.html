@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h1>Stock Data</h1>
+    <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td> {{symbol}}</td>
+                <td>${{price}}</td>
+            </tr>
+          </tbody>
+          </table>
+          </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Shares</th>
+          <th>Status</th>
+          <th>Price</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in rows %}
+            <tr>
+              <td> {{item.symbol}}</td>
+              <td> {{item.shares}}</td>
+              <td>{{item.status}}</td>
+              <td>${{item.price}}</td>
+              <td>{{item.created_at}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

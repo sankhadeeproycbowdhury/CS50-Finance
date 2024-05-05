@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div>
+  <form action="/add" method="post">
+        <input style="display: inline-block;" autocomplete="off" autofocus class="form-control mx-auto w-auto" name="money" placeholder="Money" type="text">
+    <button class="btn btn-primary" style="display: inline-block;" type="submit">ADD</button>
+</form>
+</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Shares</th>
+          <th>Price</th>
+          <th>TOTAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in rows %}
+            <tr>
+              <td> {{item.symbol}}</td>
+              <td> {{item.shares}}</td>
+              <td>${{item.price}}</td>
+              <td>${{item.total}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+<p style="text-align: right;">Cash : ${{cash}} </p>
+<p style="text-align: right;">TOTAL : ${{total}} </p>
+{% endblock %}
